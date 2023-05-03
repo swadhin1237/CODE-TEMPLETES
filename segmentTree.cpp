@@ -36,6 +36,7 @@ public:
         if(l==r&&l==idx)
         {
             st[pos] = arr[l] = x;
+            return;
         }
         int mid = (l + r) / 2;
         update(l, mid, 2 * pos + 1,idx,x);
