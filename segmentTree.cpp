@@ -19,6 +19,7 @@ public:
         if (l == r)
         {
             st[pos] = arr[l];
+            return;
         }
         int mid = (l + r) / 2;
         build(l, mid, 2 * pos + 1);
@@ -61,12 +62,6 @@ public:
 
 void solve()
 {
-    int n;
-    cin >> n;
-    for (int i = 0; i < n;i++)
-    {
-        cin >> arr[i];
-    }
 
 }
 int main()
