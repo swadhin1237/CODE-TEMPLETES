@@ -44,7 +44,7 @@ public:
         st[pos] = st[2 * pos + 1] + st[2 * pos + 2];
     }
 
-    //Delete element
+    // Delete element
     void deleteelement(int l, int r, int pos, int x)
     {
         if (r < x || l > x)
@@ -65,14 +65,14 @@ public:
     // Search Kth smallest
     int searchKth(int l, int r, int pos, int k)
     {
-        //BASE CASE
-        if (l==r)
+        // BASE CASE
+        if (l == r)
         {
             return st[pos];
         }
         int mid = (l + r) / 2;
         // LOGIC TO SEARCH MINIMUM
-        if(k<=st[2*index+1])
+        if (k <= st[2 * index + 1])
         {
             return searchKth(l, mid, 2 * pos + 1, k);
         }
@@ -81,32 +81,32 @@ public:
             return searchKth(mid, r, 2 * pos + 2, k - st[2 * pos + 1]);
         }
 
-        //LOGIC TO SEARCH MAX
-        // if (k <= st[2 * index + 2])
-        // {
-        //     return searchKth(l, mid, 2 * pos + 2, k);
-        // }
-        // else
-        // {
-        //     return searchKth(mid, r, 2 * pos + 1, k - st[2 * pos + 2]);
-        // }
+        // LOGIC TO SEARCH MAX
+        //  if (k <= st[2 * index + 2])
+        //  {
+        //      return searchKth(l, mid, 2 * pos + 2, k);
+        //  }
+        //  else
+        //  {
+        //      return searchKth(mid, r, 2 * pos + 1, k - st[2 * pos + 2]);
+        //  }
     }
 };
 void solve()
 {
     int n;
     cin >> n;
-    //PUT VALUE IN RANGE
+    // PUT VALUE IN RANGE
     segmentTree k(100005);
-    while(n--)
+    while (n--)
     {
         int a;
         cin >> a;
-        k.arr[a]=1;
+        k.arr[a] = 1;
     }
     k.build(0, 100004, 0);
 
-    //DO YOU USUAL OPERATION....
+    // DO YOU USUAL OPERATION....
 }
 int main()
 {
